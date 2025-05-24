@@ -125,6 +125,65 @@ python main.py
 - **Gerekli** (6-8): Yoğun gübreleme programı uygulanmalı
 - **Çok Gerekli** (8-10): Acil ve yoğun gübreleme gerekli
 
+## Bulanık Mantık Kuralları
+
+Sistem aşağıdaki bulanık mantık kurallarını kullanarak verim tahmini ve gübre ihtiyacını belirler:
+
+### Verim Tahmin Kuralları
+
+#### Temel Nem-Azot İlişkisi
+- Eğer nem AZ ve azot AZ ise, verim ÇOK AZ
+- Eğer nem AZ ve azot ORTA ise, verim AZ
+- Eğer nem AZ ve azot YÜKSEK ise, verim NORMAL
+- Eğer nem ORTA ve azot AZ ise, verim AZ
+- Eğer nem ORTA ve azot ORTA ise, verim NORMAL
+- Eğer nem ORTA ve azot YÜKSEK ise, verim FAZLA
+- Eğer nem YÜKSEK ve azot AZ ise, verim NORMAL
+- Eğer nem YÜKSEK ve azot ORTA ise, verim FAZLA
+- Eğer nem YÜKSEK ve azot YÜKSEK ise, verim ÇOK FAZLA
+
+#### Yağış Etkileri
+- Eğer yağış AZ ve nem AZ ise, verim ÇOK AZ
+- Eğer yağış ORTA ve nem ORTA ise, verim NORMAL
+- Eğer yağış ÇOK ve nem YÜKSEK ise, verim FAZLA
+
+#### Güneşlenme Etkileri
+- Eğer güneş AZ ve nem YÜKSEK ise, verim NORMAL
+- Eğer güneş ORTA ve nem ORTA ise, verim NORMAL
+- Eğer güneş ÇOK ve nem AZ ise, verim AZ
+
+#### Ekim Zamanı Etkileri
+- Eğer ekim zamanı KÖTÜ ise, verim AZ
+- Eğer ekim zamanı ORTA ise, verim NORMAL
+- Eğer ekim zamanı İYİ ise, verim FAZLA
+
+#### İdeal Koşullar
+- Eğer nem ORTA ve azot YÜKSEK ve yağış ORTA ve güneş ORTA ve ekim zamanı İYİ ise, verim ÇOK FAZLA
+
+### Gübre İhtiyacı Kuralları
+
+#### Azot Seviyesine Göre
+- Eğer azot AZ ise, gübre ÇOK GEREKLİ
+- Eğer azot ORTA ve verim ÇOK AZ ise, gübre ÇOK GEREKLİ
+- Eğer azot ORTA ve verim AZ ise, gübre GEREKLİ
+- Eğer azot ORTA ve verim NORMAL ise, gübre ORTA
+- Eğer azot ORTA ve verim FAZLA/ÇOK FAZLA ise, gübre AZ GEREKLİ
+- Eğer azot YÜKSEK ve verim ÇOK AZ/AZ ise, gübre GEREKLİ
+- Eğer azot YÜKSEK ve verim NORMAL ise, gübre AZ GEREKLİ
+- Eğer azot YÜKSEK ve verim FAZLA/ÇOK FAZLA ise, gübre GEREKSİZ
+
+#### Nem ve Yağış Durumuna Göre
+- Eğer nem YÜKSEK ve yağış ÇOK ise, gübre GEREKSİZ
+- Eğer nem AZ ve yağış AZ ise, gübre ÇOK GEREKLİ
+
+#### Nem-Azot Kombinasyonları
+- Eğer nem ORTA ve azot AZ ise, gübre GEREKLİ
+- Eğer nem ORTA ve azot ORTA ise, gübre ORTA
+- Eğer nem ORTA ve azot YÜKSEK ise, gübre AZ GEREKLİ
+- Eğer nem YÜKSEK ve azot AZ ise, gübre GEREKLİ
+- Eğer nem YÜKSEK ve azot ORTA ise, gübre AZ GEREKLİ
+- Eğer nem YÜKSEK ve azot YÜKSEK ise, gübre GEREKSİZ
+
 ## Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakınız. 
