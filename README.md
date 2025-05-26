@@ -32,6 +32,11 @@ Bu proje, buğday tarımında verim tahmini ve gübre ihtiyacını belirlemek i�
 ```bash
 pip install -r requirements.txt
 ```
+Ya da 
+
+```bash
+pip install numpy scikit-fuzzy matplotlib scipy networkx PyQt5
+```
 
 ## Kullanım
 
