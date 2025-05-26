@@ -44,6 +44,29 @@ Programı çalıştırmak için:
 ```bash
 python main.py
 ```
+## Git Kullanarak Çalıştırmak İçin
+1. Python 3.6 veya üstü bir sürüm yükleyin
+2. Terminali Açın ve projeyi klonlayın:
+```bash
+git clone https://github.com/ozdemir-furkan/FuzzyBugday.git
+```
+3. Klasöre Girin:
+```bash
+cd FuzzyBugday
+```
+4. Gerekli kütüphaneleri yükleyin:
+```bash
+pip install -r requirements.txt
+```
+Ya da 
+
+```bash
+pip install numpy scikit-fuzzy matplotlib scipy networkx PyQt5
+```
+5. Uygulamayı Başlatın:
+```bash
+python main.py
+```
 
 ## Giriş Parametreleri ve Üyelik Fonksiyonları
 
