@@ -10,7 +10,7 @@ Bu proje, buğday tarımında verim tahmini ve gübre ihtiyacını belirlemek i�
 
 ### Üyelik Fonksiyonları
 ![Üyelik Fonksiyonları](uyelik.png)
-*Bulanık mantık üyelik fonksiyonları görünümü*
+*Bulanık mantık üyelik fonksiyonları görünümü (Üyelik Fonksiyonlarını Göster Dediğinizde Sekmede Grafikler Görünecektir.)*
 
 ### Sonuç Ekranı
 ![Sonuç Ekranı](sonuc.png)
